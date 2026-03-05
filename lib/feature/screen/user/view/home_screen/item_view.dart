@@ -16,10 +16,10 @@ class ItemView extends GetView<ItemController> {
             controller.selectIn.value = index;
           },
           destinations: [
-            NavigationDestination(icon: Icon(Icons.home), label: "home"),
-            NavigationDestination(icon: Icon(Icons.home), label: "home"),
-            NavigationDestination(icon: Icon(Icons.home), label: "home"),
-            NavigationDestination(icon: Icon(Icons.home), label: "home"),
+            NavigationDestination(icon: Icon(Icons.home), label: "Home One"),
+            NavigationDestination(icon: Icon(Icons.home), label: "Home Two"),
+            NavigationDestination(icon: Icon(Icons.home), label: "Home Three"),
+            NavigationDestination(icon: Icon(Icons.home), label: "Home Four"),
           ])),
     );
   }
