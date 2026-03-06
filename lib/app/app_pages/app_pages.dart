@@ -13,6 +13,18 @@ class AppPages{
   static final String singInOne = "/SingInOne";
   static final String singInTwo = "/SingInTwo";
   //home
-static final String item = "/item";
+  static final String item = "/item";
+  static final String homePage ="/HomePage";
+  static final String homePageTwo ="/HomePAgeTwo";
+  static final String productDetails ="/ProductDetails";
+
+  //Cart
+  static final String cartView = "/CartView";
+
+  //Order
+  static final String orderView = "/OrderView";
+
+  //Account
+  static final String accountView ="/AccountView";
 
 }
