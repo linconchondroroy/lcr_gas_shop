@@ -1,117 +1,81 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:lcr_gas_shop/feature/screen/user/controller/account_controller/account_controller.dart';
 
 class AccountView extends StatelessWidget {
-  const AccountView({super.key});
 
-  Widget menuItem(IconData icon, String title) {
-    return ListTile(
-      contentPadding: const EdgeInsets.symmetric(vertical: 6),
-      leading: Icon(
-        icon,
-        color: const Color(0xff2D9CDB),
-        size: 26,
-      ),
-      title: Text(
-        title,
-        style: const TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.w500,
-        ),
-      ),
-      trailing: const Icon(Icons.chevron_right),
-      onTap: () {},
-    );
-  }
+  AccountView({super.key});
+
+  final AccountViewController controller =
+  Get.put(AccountViewController());
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
-      backgroundColor: const Color(0xffF4F6F9),
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
-          child: Column(
-            children: [
-              const SizedBox(height: 20),
+      body: Padding(
+        padding: const EdgeInsets.all(15.0),
 
-              /// Profile Section
-              Row(
-                children: const [
-                  CircleAvatar(
-                    radius: 28,
-                    backgroundImage:
-                    NetworkImage("https://i.pravatar.cc/150?img=47"),
-                  ),
-                  SizedBox(width: 15),
-                  Text(
-                    "Sabrina Carpenter",
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ],
+        child: Column(
+          children: [
+
+            Row(
+              children: [
+                const CircleAvatar(),
+                SizedBox(width: 10.w),
+                const Text("Sourov Chandra"),
+              ],
+            ),
+
+            SizedBox(height: 5.h),
+
+            InkWell(
+              onTap: controller.moveToAccountProfile,
+              child: const ListTile(
+                leading: Icon(Icons.person),
+                title: Text("Account"),
+                trailing: Icon(Icons.keyboard_double_arrow_right_outlined),
               ),
+            ),
 
-              const SizedBox(height: 25),
+            SizedBox(height: 5.h),
 
-              /// Menu Items
-              menuItem(Icons.person_outline, "Account"),
-              menuItem(Icons.shopping_bag_outlined, "My order"),
-              menuItem(Icons.description_outlined, "Monthly consumption"),
-              menuItem(Icons.card_giftcard_outlined, "Loyalty balance"),
-              menuItem(Icons.settings_outlined, "Settings"),
-              menuItem(Icons.logout, "Logout"),
+            const ListTile(
+              leading: Icon(Icons.book),
+              title: Text("My order"),
+              trailing: Icon(Icons.keyboard_double_arrow_right_outlined),
+            ),
 
-              const Spacer(),
-            ],
-          ),
-        ),
-      ),
+            SizedBox(height: 5.h),
 
-      /// Bottom Navigation Bar
-      bottomNavigationBar: Container(
-        margin: const EdgeInsets.all(16),
-        padding: const EdgeInsets.symmetric(vertical: 12),
-        decoration: BoxDecoration(
-          color: const Color(0xff2D9CDB),
-          borderRadius: BorderRadius.circular(40),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: const [
-            BottomItem(icon: Icons.home, label: "Home"),
-            BottomItem(icon: Icons.shopping_bag_outlined, label: "Cart"),
-            BottomItem(icon: Icons.bar_chart, label: "Order"),
-            BottomItem(icon: Icons.person_outline, label: "Account"),
+            const ListTile(
+              leading: Icon(Icons.balance),
+              title: Text("Loyality Balance"),
+              trailing: Icon(Icons.keyboard_double_arrow_right_outlined),
+            ),
+
+            SizedBox(height: 5.h),
+
+            const ListTile(
+              leading: Icon(Icons.person),
+              title: Text("Monthy consumstion"),
+              trailing: Icon(Icons.keyboard_double_arrow_right_outlined),
+            ),
+
+            SizedBox(height: 5.h),
+
+            const ListTile(
+              leading: Icon(Icons.settings),
+              title: Text("setting"),
+              trailing: Icon(Icons.keyboard_double_arrow_right_outlined),
+            ),
+
+            SizedBox(height: 5.h),
+
           ],
         ),
       ),
-    );
-  }
-}
-
-class BottomItem extends StatelessWidget {
-  final IconData icon;
-  final String label;
-
-  const BottomItem({super.key, required this.icon, required this.label});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisSize: MainAxisSize.min,
-      children: [
-        Icon(icon, color: Colors.white),
-        const SizedBox(height: 4),
-        Text(
-          label,
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 12,
-          ),
-        ),
-      ],
     );
   }
 }

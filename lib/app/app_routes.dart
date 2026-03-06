@@ -12,6 +12,7 @@ import 'package:lcr_gas_shop/feature/screen/user/view/Authentication_view/sign_u
 import 'package:lcr_gas_shop/feature/screen/user/view/Authentication_view/sign_up/sign_up_view.dart';
 import 'package:lcr_gas_shop/feature/screen/user/view/Authentication_view/sign_up/sing_up_four.dart';
 import 'package:lcr_gas_shop/feature/screen/user/view/Authentication_view/sign_up/sing_up_three.dart';
+import 'package:lcr_gas_shop/feature/screen/user/view/account/acccount_profile.dart';
 import 'package:lcr_gas_shop/feature/screen/user/view/account/account_view.dart';
 import 'package:lcr_gas_shop/feature/screen/user/view/cart/cart_view.dart';
 import 'package:lcr_gas_shop/feature/screen/user/view/home_screen/home_page_view.dart';
@@ -52,6 +53,6 @@ class AppRoutes{
 
     //Account
     GetPage(name: AppPages.accountView, page: ()=> AccountView(), binding: AccountBindings()),
-
+    GetPage(name: AppPages.accountProfileView, page: ()=> AccountProfile(), binding: AccountBindings()),
   ];
 }
